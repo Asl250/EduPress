@@ -1,4 +1,6 @@
+import Footer from '@/app/(root)/_components/Footer'
 import React from "react";
+import Navbar from './_components/Navbar'
 
 interface Props {
 	children: React.ReactNode;
@@ -6,8 +8,10 @@ interface Props {
 
 const Layout = async ({ children }: Props) => {
 	return (
-		<div>
+		<div className={"overflow-x-hidden"}>
+			<Navbar/>
 			{children}
+			<Footer/>
 		</div>
 )};
 
