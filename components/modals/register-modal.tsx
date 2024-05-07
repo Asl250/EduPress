@@ -142,6 +142,7 @@ function RegisterStep2({data} : {data: {email: string; name: string}}) {
 			username: "",
 		},
 	});
+	const loginModal = useLoginModal()
 	
 	async function onSubmit(values: z.infer<typeof registerStep2Schema>) {
 		try {
@@ -150,13 +151,14 @@ function RegisterStep2({data} : {data: {email: string; name: string}}) {
 			)
 			if (response.success) {
 				registerModal.onClose()
+				loginModal.onOpen()
 			}
 		} catch (error: any) {
 			if (error.response.data.error){
-				signIn("credentials", {
-					email: data.email,
-					password: values.password,
-				})
+				// signIn("credentials", {
+				// 	email: data.email,
+				// 	password: values.password,
+				// })
 				setError(error.response.data.error)
 			}else {
 				setError("something went wrong, Please try again later")

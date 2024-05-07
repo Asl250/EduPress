@@ -10,6 +10,7 @@ export interface ICourse {
 	}
 	createdAt: string
 	content: {html:string}
+	slug: string
 	
 }
 export interface IAuthor {

@@ -1,7 +1,8 @@
+import GlobalSearch from '@/app/(root)/_components/global-search'
 import FeaturedCourses from '@/components/cards/Featured-courses'
-import Button from '@/components/ui/button'
 import { getCourses } from '@/service/course.service'
 import React from 'react'
+
 
 async function Courses() {
 	const courses = await getCourses()
@@ -13,8 +14,8 @@ async function Courses() {
 				<div className={"max-md:basis-1/2"}>
 					<h1 className={"text-4xl text-black font-semibold"}>All Courses</h1>
 				</div>
-				<div className={"max-md:flex max-md:basis-1/2 max-md:mt-5 max-md:mr-3"}>
-					<Button label={"All categories"} outline />
+				<div className={"max-md:flex max-md:basis-1/2 max-md:mt-5 max-md:mr-3 flex"}>
+					<GlobalSearch />
 				</div>
 			</div>
 			<div

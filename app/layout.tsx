@@ -1,9 +1,10 @@
 import { Provider } from '@/app/provider'
 import type { Metadata } from "next";
-import { SessionProvider } from 'next-auth/react'
 import { Inter, Crete_Round, Work_Sans } from "next/font/google";
 import "./globals.css";
 import {ChildProps} from "@/types";
+// import { SpeedInsights } from '@vercel/speed-insights/next';
+// import {Analytics} from "@vercel/analytics/next";
 
 const inter = Inter({ subsets: ["latin"] });
 const creteRound = Crete_Round({
@@ -28,6 +29,8 @@ function RootLayout({children}:ChildProps) {
     <body className={inter.className}>
     <Provider>
       {children}
+      {/* <SpeedInsights /> */}
+      {/* <Analytics/> */}
     </Provider>
     </body>
     </html>

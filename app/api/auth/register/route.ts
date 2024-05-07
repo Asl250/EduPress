@@ -1,5 +1,5 @@
 import User from "@/database/user.model";
-import { connectToDatabase } from "@/lib/mongoose";
+import {connectToDatabase} from '@/lib/mongoose'
 import { NextResponse } from "next/server";
 import { hash } from "bcrypt";
 
@@ -24,9 +24,9 @@ export async function POST(req: Request) {
 		} else if (step === "2") {
 			const { email, username, name, password } = await req.json();
 			
-			const isExistinUsername = await User.findOne({ username });
+			const isExistingUsername = await User.findOne({ username });
 			
-			if (isExistinUsername) {
+			if (isExistingUsername) {
 				return NextResponse.json(
 					{ error: "Username already exists" },
 					{ status: 400 }
