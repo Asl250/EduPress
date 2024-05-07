@@ -18,7 +18,7 @@ export default  function Categories() {
 			<div className={"grid grid-cols-5 gap-5 mt-10 max-sm:grid-cols-1 max-md:grid-cols-2 max-lg:grid-cols-3"}>
 				{
 					categories.map((category) => (
-						<button>
+						<button key={category.name}>
 							<div className={"space-y-3 py-10 hover:text-orange-500 rounded-xl hover:scale-105 duration-200 border"}>
 								<Image
 									key={category.name}
